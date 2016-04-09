@@ -1,0 +1,20 @@
+{
+  "name": "ubicacion",
+  "homepage": "https://github.com/maztch/ubicacion",
+  "authors": [
+    "maztch <maztch@gmail.com>"
+  ],
+  "description": "javascript location class",
+  "main": "ubicacion.js",
+  "keywords": [
+    "location"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
