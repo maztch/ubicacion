@@ -33,8 +33,11 @@ Ubicacion uses sessionStorage, so if multiple times called it just ask for Locat
 
 ## Other helper functions
 
-getImage, returns image for a specific latitude, logitude.
+image, returns image for a specific latitude, logitude.
 
 	var image = Ubicacion.image(latitude, longitude);
-	$('#my_div').html(image);
+	$('#my_div').html('<img src="'+image+'">');
 
+and getImage for current location
+	
+	$('#my_div').html('<img src="'+Ubicacion.getImage()+'">');
