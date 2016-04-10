@@ -31,6 +31,20 @@ Ubicacion uses sessionStorage, so if multiple times called it just ask for Locat
 			force: true
 		});
 
+It can use multiple instances and all success actions will be fired when location found
+
+	var u1 = new Ubicacion({
+			success: function(p) {
+	        	alert('one');
+	        }
+		});
+	var u2 = new Ubicacion({
+			success: function(p) {
+	        	alert('two');
+	        }
+		});
+	//will fire twice "one", "two" alerts.
+
 ## Other helper functions
 
 image, returns image for a specific latitude, logitude.

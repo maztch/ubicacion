@@ -123,6 +123,14 @@ var Ubicacion = (function() {
             */
         };
 
+        //private
+        var fireActions = function() {
+            while (_actions.length > 0) {
+                var e = _actions.pop();
+                e(_get());
+            }
+        };
+
         if (!_lat) {
             if (navigator.geolocation) {
                 console.log('init location');
@@ -131,20 +139,14 @@ var Ubicacion = (function() {
                 console.log('location not supported, using ip');
                 ipLocation();
             }
+        }else{
+            fireActions();
         }
 
         //private
         var _set = function(lt, lg) {
             this.lat = lt;
             this.lon = lg;
-        };
-
-        //private
-        var fireActions = function() {
-            while (_actions.length > 0) {
-                var e = _actions.pop();
-                e(_get());
-            }
         };
 
     };
