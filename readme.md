@@ -6,6 +6,14 @@ This class keeps location on session storage so you don't need to call location 
 
 It also have a fallback function (less accurate) using ip location.
 
+## Install
+
+Use bower to use in your projects
+
+	bower install ubicacion
+
+Or you can just download and call ubicacion.js
+
 ## Usage
 
 Just create new variable
@@ -52,6 +60,6 @@ image, returns image for a specific latitude, logitude.
 	var image = Ubicacion.image(latitude, longitude);
 	$('#my_div').html('<img src="'+image+'">');
 
-and getImage for current location
+getImage for current location
 	
 	$('#my_div').html('<img src="'+Ubicacion.getImage()+'">');
