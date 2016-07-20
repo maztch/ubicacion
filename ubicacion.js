@@ -131,7 +131,7 @@ var Ubicacion = (function() {
             }
         };
 
-        if (!_lat) {
+        if (!_lat || _lat==="undefined") {
             if (navigator.geolocation) {
                 console.log('init location');
                 navigator.geolocation.getCurrentPosition(onSuccess, ipLocation);
