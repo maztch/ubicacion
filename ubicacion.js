@@ -2,6 +2,7 @@ var Ubicacion = (function() {
     //private
     var _lat;
     var _lon;
+    var _api;
     var _actions = [];
 
     var cls = function(params) {
@@ -10,6 +11,9 @@ var Ubicacion = (function() {
 
         this.lat = d.lat || null;
         this.lon = d.lon || null;
+        this.api = d.api || null;
+
+        _api = this.api;
 
         //private
         var _addAction = function(action) {
@@ -155,14 +159,15 @@ var Ubicacion = (function() {
         return { "lat": this.lat, "lon": this.lon };
     };
     cls.getImage = function() {
-        return "http://maps.googleapis.com/maps/api/staticmap?center=" + _lat + "," + _lon + "&zoom=14&size=400x300&sensor=false";
+        console.log(_api);
+        return "https://maps.googleapis.com/maps/api/staticmap?center=" + _lat + "," + _lon + "&zoom=14&size=400x300&sensor=false&key="+_api;
     };
     cls.prototype = {
         //static functions
 
         //return image from latitude longitude
         image: function(lat, lon) {
-            return "http://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=14&size=400x300&sensor=false";
+            return "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=14&size=400x300&sensor=false&key="+_api;
         }
     };
     return cls;
